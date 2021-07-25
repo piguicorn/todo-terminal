@@ -45,7 +45,7 @@ class Tareas {
         this.listadoArr.forEach(( tarea, index ) => {
 
             const { descripcion, completadoEn } = tarea;
-            const estado = completadoEn ? 'Completada'.green : 'Pendiente'.red;
+            const estado = completadoEn ? 'Done'.green : 'Pending'.red;
 
             console.log(`${(index+1+'.').green} ${descripcion} :: ${estado}`)
         });
@@ -57,7 +57,7 @@ class Tareas {
         listaFiltrada.forEach(( tarea, index ) => {
 
             const { descripcion, completadoEn } = tarea;
-            const estado = completadoEn ? 'Completada'.green : 'Pendiente'.red;
+            const estado = completadoEn ? 'Done'.green : 'Pending'.red;
 
             console.log(`${(index+1+'.').green} ${descripcion} :: ${estado}`)
         });

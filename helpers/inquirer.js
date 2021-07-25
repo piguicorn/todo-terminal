@@ -5,36 +5,36 @@ const preguntas = [
     {
         type: 'list',
         name: 'opcion',
-        message: '¿Qué desea hacer?',
+        message: 'What would you like to do?',
         pageSize: 8,
         choices: [
             {
                 value: '1',
-                name: `${"1".green}. Crear tarea`,
+                name: `${"1".green}. Create task`,
             },
             {
                 value: '2',
-                name: `${"2".green}. Listar tareas`,
+                name: `${"2".green}. List tasks`,
             },
             {
                 value: '3',
-                name: `${"3".green}. Listar tareas completadas`,
+                name: `${"3".green}. List completed tasks`,
             },
             {
                 value: '4',
-                name: `${"4".green}. Listar tareas pendientes`,
+                name: `${"4".green}. List pending tasks`,
             },
             {
                 value: '5',
-                name: `${"5".green}. Completar tarea(s)`,
+                name: `${"5".green}. Check task(s)`,
             },
             {
                 value: '6',
-                name: `${"6".green}. Borrar tarea`,
+                name: `${"6".green}. Delete task`,
             },
             {
                 value: '0',
-                name: `${"0".green}. Salir`,
+                name: `${"0".green}. Exit`,
             },
         ]
     }
@@ -43,7 +43,7 @@ const preguntas = [
 const inquirerMenu = async () => {
     console.clear();
     console.log('======================'.cyan);
-    console.log('Seleccione una opción');
+    console.log('Select an option');
     console.log('======================'.cyan);
 
     const { opcion } = await inquirer.prompt(preguntas);
@@ -59,7 +59,7 @@ const inquirerPausa = async () => {
         {
             type: 'input',
             name: 'opcion',
-            message: `Presione ${'ENTER'.cyan} para continuar.`
+            message: `Press ${'ENTER'.cyan} to continue.`
         }
     ];
 
@@ -75,7 +75,7 @@ const leerInput = async( message ) => {
             message,
             validate(value) {
                 if( value.length == 0) {
-                    return 'Por favor, ingrese un valor';
+                    return 'Please, insert a value';
                 }
                 return true;
             }
@@ -100,14 +100,14 @@ const listadoTareasBorrar = async (tareas = []) => {
 
     choices.unshift({
         value: '0',
-        name: '0'.green + '. Cancelar'
+        name: '0'.green + '. Cancel'
     });
 
     const preguntas = [
         {
             type: 'list',
             name: 'id',
-            message: 'Borrar',
+            message: 'Delete',
             choices
         }
     ]

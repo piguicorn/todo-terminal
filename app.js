@@ -28,7 +28,7 @@ const main = async () => {
 
         switch (opt) {
             case '1': // crear tarea
-                const descripcion = await leerInput('Descripción: ');
+                const descripcion = await leerInput('Description: ');
                 
                 const tarea = new Tarea(descripcion);
                 tareas._listado[tarea.id] = tarea;
@@ -55,10 +55,10 @@ const main = async () => {
             case '6': // borrar
                 const id = await listadoTareasBorrar( tareas.listadoArr );
                 if ( id !== '0') {
-                    const ok = await confirmar('¿Desea borrar esa tarea?');
+                    const ok = await confirmar('Delete this task?');
                     if ( ok ) {
                         tareas.borrarTarea(id);
-                        console.log('Tarea borrada');
+                        console.log('Task deleted');
                     }
                 }
 
